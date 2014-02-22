@@ -22,9 +22,7 @@ var gulp = require('gulp'),		// gulp core
 	stylish = require('jshint-stylish'),                // make errors look good in shell
 	uglify = require('gulp-uglify'),					// uglifies the js
 	rename = require('gulp-rename'),					// rename files
-	browserSync = require('browser-sync'),              // inject code to all devices
-	lr = require('tiny-lr'),
-	server = lr()
+	browserSync = require('browser-sync')              // inject code to all devices
 ;
 
 /*******************************************************************************
