@@ -1,0 +1,34 @@
+{
+  "name": "GulpTemplateVs",
+  "version": "0.1.0",
+  "description": "SFB template",
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "author": "Rick Fessler",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-stylus": "0.0.12",
+    "gulp-livereload": "~1.1.1",
+    "tiny-lr": "0.0.5",
+    "gulp-util": "~2.2.14",
+    "gulp-ruby-sass": "~0.3.0",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-uglify": "~0.2.1",
+    "gulp-concat": "~2.1.7",
+    "gulp-jshint": "~1.4.2",
+    "gulp-rename": "~1.0.0",
+    "gulp-strip-debug": "~0.1.1",
+    "gulp-clean": "~0.2.4",
+    "bower": "~1.2.8",
+    "gulp-bower": "0.0.2",
+    "gulp-bower-files": "~0.1.9",
+    "jshint-stylish": "~0.1.5",
+    "browser-sync": "~0.6.0",
+    "gulp-minify-css": "~0.3.0"
+  },
+  "dependencies": {
+    "gulp-plumber": "~0.5.6"
+  }
+}
