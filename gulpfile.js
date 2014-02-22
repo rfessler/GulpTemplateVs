@@ -22,6 +22,7 @@ var gulp = require('gulp'),		// gulp core
 	stylish = require('jshint-stylish'),                // make errors look good in shell
 	uglify = require('gulp-uglify'),					// uglifies the js
 	rename = require('gulp-rename'),					// rename files
+	connect = require('gulp-connect'),					// connect to server for live reload functionally
 	browserSync = require('browser-sync'),              // inject code to all devices
 	lr = require('tiny-lr'),
 	server = lr()
@@ -72,6 +73,14 @@ var target = {
 	]
 };
 
+gulp.task('connect', connect.server({
+  	port: 18093,
+  	livereload: true,
+  	open: {
+    	browser: 'firefox' // if not working OS X browser: 'Google Chrome'
+  	}
+}));
+
 /*******************************************************************************
 3. SASS TASK  -- working rmf 2/21
 *******************************************************************************/
@@ -97,7 +106,8 @@ gulp.task('sass', function() {
 			style: 'compressed',
 			lineNumbers: false
 		}))		
-		.pipe(gulp.dest(path.cssDist));
+		.pipe(gulp.dest(path.cssDist))
+		.pipe(connect.reload());
 });
 
 /*******************************************************************************
@@ -145,12 +155,16 @@ gulp.task('browser-sync', function() {
 });
 
 
+
+
+
+
 /*******************************************************************************
 6. GULP TASKS
 *******************************************************************************/
 // default task
-gulp.task('default', ['sass','browser-sync'], function(){
-	gulp.watch(target.sassDirSrc, ['sass']);
+gulp.task('default', ['connect','sass'], function(){
+	gulp.watch([target.sassDirSrc], ['sass']);
 });	
 
 
